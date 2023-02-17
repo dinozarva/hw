@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>-->
+
+
+    <link rel="stylesheet" href="cstyle.css">
+    <!--    <script src="calendar.js"></script>-->
+
+</head>
+
+<body class="calendar">
+
+
+    <section class="part1">
+
+
+        <section class="header">
+
+            <div class="current">
+                <script>
+                    let objectDate = new Date();
+                    let day = objectDate.getDate();
+                    let month = objectDate.getMonth();
+                    let year = objectDate.getFullYear();
+
+                    var monthDefault = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    document.write(day.toString() + " " + monthDefault[month] + " " + year.toString())
+                </script>
+            </div>
+
+            <div class="buttons">
+                <svg class="img1" width="20" height="20" viewBox="0 0 39 39" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38 38L27 27" stroke="#8998B4" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z"
+                        stroke="#8998B4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg class="img2" width="19" height="19" viewBox="0 0 38 38" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1H15V15H1V1Z" stroke="#8998B4" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23 1H37V15H23V1Z" stroke="#8998B4"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 23H15V37H1V23Z" stroke="#8998B4"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23 23H37V37H23V23Z" stroke="#8998B4"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </section>
+
+
+
+
+
+
+        <section class="timetable">
+            <div class="time">
+                <div class="time-item">09:00 <div class="line"></div>
+                </div>
+                <div class="time-item">10:00 <div class="line"></div>
+                </div>
+                <div class="time-item">11:00 <div class="line"></div>
+                </div>
+                <div class="time-item">12:00 <div class="line"></div>
+                </div>
+                <div class="time-item">13:00 <div class="line"></div>
+                </div>
+                <div class="time-item">14:00 <div class="line"></div>
+                </div>
+                <div class="time-item">15:00 <div class="line"></div>
+                </div>
+                <div class="time-item">16:00 <div class="line"></div>
+                </div>
+                <div class="time-item">17:00 <div class="line"></div>
+                </div>
+                <div class="time-item">18:00 <div class="line"></div>
+                </div>
+                <div class="time-item">19:00 <div class="line"></div>
+                </div>
+                <div class="time-item">20:00 <div class="line"></div>
+                </div>
+            </div>
+            <div class="plan">
+                <div class="red-block">
+                    <div class="red-block__block1">Meet Sophia in airport</div>
+                </div>
+                <div class="blue-block">
+                    <div class="blue-block__block2">Studio workshop</div>
+                </div>
+                <div class="orange-block">
+                    <div class="orange-block__block3">Design workshop with Johny Ive</div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </section>
+
+    <section class="part2">
+
+        <div class="wrapper">
+            <div class="container-calendar">
+                <h3 id="monthAndYear"></h3>
+                <div class="button-container-calendar">
+                    <button id="previous" onclick="previous()">&#8249;</button>
+                    <button id="next" onclick="next()">&#8250;</button>
+                </div>
+                <table class="table-calendar" id="calendar" data-lang="en">
+                    <thead id="thead-month"></thead>
+                    <tbody id="calendar-body"></tbody>
+                </table>
+                <div class="footer-container-calendar">
+                    <label for="month">Jump To: </label>
+                    <select id="month" onchange="jump()">
+                        <option value=0>Jan</option>
+                        <option value=1>Feb</option>
+                        <option value=2>Mar</option>
+                        <option value=3>Apr</option>
+                        <option value=4>May</option>
+                        <option value=5>Jun</option>
+                        <option value=6>Jul</option>
+                        <option value=7>Aug</option>
+                        <option value=8>Sep</option>
+                        <option value=9>Oct</option>
+                        <option value=10>Nov</option>
+                        <option value=11>Dec</option>
+                    </select>
+                    <select id="year" onchange="jump()"></select>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="categories">
+            <div>Your categories</div>
+            <div class="boxes">
+                <button class="box1">FINANCE</button>
+                <button class="box2">MANAGEMENT</button>
+                <button class="box3">DESIGN</button>
+            </div>
+
+        </section>
+    </section>
+    <script type="text/javascript" src="calendar.js"></script>
+</body>
+
+
+
+</html>
